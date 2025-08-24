@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | New Horizon Precision</title>
+    <style>
+        :root {
+            --color-dark-green: #1E3D2F;
+            --color-golden-yellow: #E4A936;
+            --color-off-white: #F6F2EA;
+            --color-sky-blue: #4E9CBF;
+            --color-charcoal-gray: #2D2D2D;
+            --color-bright-green: #6BAF5B;
+
+            --color-text: var(--color-charcoal-gray);
+            --color-surface: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Clarendon', 'Georgia', serif;
+            line-height: 1.6;
+            color: var(--color-text);
+            background: var(--color-off-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--color-dark-green);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1.5rem;
+        }
+
+        .logo a {
+            color: var(--color-off-white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--color-off-white);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-golden-yellow);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(30,61,47,0.8), rgba(30,61,47,0.8)), url('assets/images/Spraying Drones - T30.jpg.webp');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0 80px;
+            text-align: center;
+            color: var(--color-off-white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--color-surface);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-dark-green);
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+
+        /* Story Section */
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--color-dark-green);
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .story-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .story-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .value-card {
+            background: var(--color-surface);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            color: var(--color-dark-green);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .value-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .team-member {
+            background: var(--color-surface);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .team-member-content {
+            padding: 30px;
+        }
+
+        .team-member h3 {
+            color: var(--color-dark-green);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .team-member .title {
+            color: var(--color-golden-yellow);
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .team-member p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        /* Mission Section */
+        .mission-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .mission-content h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--color-dark-green);
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .mission-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background: var(--color-dark-green);
+            color: var(--color-off-white);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            border: 2px solid var(--color-dark-green);
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--color-dark-green);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-charcoal-gray);
+            color: var(--color-off-white);
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-section h3 {
+            color: var(--color-golden-yellow);
+            margin-bottom: 20px;
+            font-family: 'Clarendon', 'Georgia', serif;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #d6d6d6;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-golden-yellow);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #bdbdbd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .story-content {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.v2.html">New Horizon Precision</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.v2.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="kudzu.html">Kudzu Removal</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="portal.html">Customer Portal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About New Horizon Precision</h1>
+            <p>Pioneering the future of precision agriculture through innovative drone technology and sustainable practices</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>From university innovation to agricultural revolution</p>
+            </div>
+            
+            <div class="story-content">
+                <div class="story-text">
+                    <h3>The Beginning</h3>
+                    <p>New Horizon Precision was founded by two forward-thinking University of Tennessee students who recognized the immense potential of drone technology in revolutionizing agricultural practices. What started as a university project has grown into a comprehensive agricultural and land management service company.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>We are committed to helping farmers, landowners, and agricultural businesses optimize their operations while reducing costs and environmental impact through advanced drone technology. Our precision approach ensures maximum efficiency and minimal waste.</p>
+                    
+                    <h3>Growth & Expansion</h3>
+                    <p>Starting in East Tennessee, we've expanded our services throughout the South, building lasting relationships with clients who value innovation, reliability, and sustainable practices. Our commitment to excellence has made us a trusted partner in agricultural advancement.</p>
+                </div>
+                <div class="story-image">
+                    <img src="assets/images/IMG_1Thefutureofdrones.jpg" alt="Drone Technology in Agriculture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We continuously embrace cutting-edge technology and methodologies to deliver the most advanced agricultural solutions available. Our commitment to innovation drives us to explore new possibilities in precision agriculture.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Sustainability</h3>
+                    <p>Environmental responsibility is at the heart of our operations. We help clients reduce chemical usage, optimize resource allocation, and implement practices that protect our land for future generations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Precision</h3>
+                    <p>Every operation we perform is executed with meticulous attention to detail. Our advanced mapping and AI technology ensure that every application is precisely targeted for maximum effectiveness.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Reliability</h3>
+                    <p>Our clients depend on us for critical agricultural operations. We maintain the highest standards of safety, compliance, and operational excellence to ensure consistent, dependable service.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Transparency</h3>
+                    <p>We believe in open communication and clear reporting. Our customer portal provides real-time access to project data, ensuring clients always know exactly what's happening with their operations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <h3>Partnership</h3>
+                    <p>We view our relationship with clients as a true partnership. We work closely with farmers and landowners to understand their unique needs and develop customized solutions that drive success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Leadership Team</h2>
+                <p>Meet the innovators behind New Horizon Precision</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="assets/images/DSC03112-1.jpg.webp" alt="Founder 1">
+                    <div class="team-member-content">
+                        <h3>University of Tennessee Graduate</h3>
+                        <div class="title">Co-Founder & Chief Technology Officer</div>
+                        <p>Leading our technological innovation and drone operations, ensuring we stay at the forefront of agricultural drone technology and AI applications.</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="assets/images/266b358808fb56faac099c60491e8d90.jpg.medium.800x800.jpg" alt="Founder 2">
+                    <div class="team-member-content">
+                        <h3>University of Tennessee Graduate</h3>
+                        <div class="title">Co-Founder & Chief Operations Officer</div>
+                        <p>Overseeing day-to-day operations, client relationships, and ensuring our services meet the highest standards of quality and safety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="section">
+        <div class="container">
+            <div class="mission-content">
+                <h3>Our Mission</h3>
+                <p>To revolutionize agricultural practices through precision drone technology, helping farmers and landowners achieve greater yields, reduce costs, and implement sustainable practices that protect our environment for future generations.</p>
+                <p>We believe that the future of agriculture lies in the intelligent application of technology, and we're proud to be at the forefront of this agricultural revolution.</p>
+                <a href="contact.html" class="cta-button">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <p>Knoxville, Tennessee</p>
+                    <p>East Tennessee & Expanding South</p>
+                    <p>Phone: (865) XXX-XXXX</p>
+                    <p>Email: info@newhorizonprecision.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="services.html">Aerial Spraying</a>
+                    <a href="services.html">Cover Crop Application</a>
+                    <a href="services.html">Mapping & Surveying</a>
+                    <a href="services.html">Row Crop & Pasture Seeding</a>
+                    <a href="services.html">Precision Agriculture</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="portal.html">Customer Portal</a>
+                    <a href="certifications.html">Certifications</a>
+                    <a href="https://linkedin.com/company/knoxville-drone-solutions" target="_blank">LinkedIn</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Service Areas</h3>
+                    <p>East Tennessee (Primary)</p>
+                    <p>Expanding Throughout the South</p>
+                    <p>Recurring Contracts Available</p>
+                    <p>One-Time Services Offered</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 New Horizon Precision. All rights reserved. | FAA Part 107 & 137 Certified | TDA Licensed</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Keep header brand color on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            header.style.background = getComputedStyle(document.documentElement)
+                .getPropertyValue('--color-dark-green');
+        });
+    </script>
+</body>
+</html>
