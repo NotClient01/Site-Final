@@ -1,354 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Horizon Precision | Agricultural & Land Management Drone Services</title>
-    <style>
-        :root {
-            --color-dark-green: #1E3D2F;
-            --color-golden-yellow: #E4A936;
-            --color-off-white: #F6F2EA;
-            --color-sky-blue: #4E9CBF;
-            --color-charcoal-gray: #2D2D2D;
-            --color-bright-green: #6BAF5B;
-
-            --color-text: var(--color-charcoal-gray);
-            --color-surface: #FFFFFF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Clarendon', 'Georgia', serif;
-            line-height: 1.6;
-            color: var(--color-text);
-            background: var(--color-off-white);
-        }
-
-        /* Header */
-        header {
-            background: var(--color-dark-green);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1.5rem;
-        }
-
-        .logo a {
-            color: var(--color-off-white);
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links a {
-            color: var(--color-off-white);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--color-golden-yellow);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(30,61,47,0.65), rgba(30,61,47,0.65)), url('assets/images/A5OHG5MZOVFMJET4ZUWQ3NNG6Y.JPG');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--color-off-white);
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: bold;
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .hero-content .tagline {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #f0f0f0;
-        }
-
-        .hero-content .location {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: var(--color-golden-yellow);
-        }
-
-        .cta-button {
-            background: var(--color-golden-yellow);
-            color: var(--color-dark-green);
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            display: inline-block;
-            border: 2px solid var(--color-golden-yellow);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--color-off-white);
-            border-color: var(--color-off-white);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background: var(--color-off-white);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--color-dark-green);
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            background: var(--color-surface);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .service-card-content {
-            padding: 20px;
-        }
-
-        .service-card h3 {
-            color: var(--color-dark-green);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .learn-more-btn {
-            background: var(--color-dark-green);
-            color: var(--color-off-white);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 15px;
-            transition: background 0.3s, opacity 0.3s;
-            font-size: 0.9rem;
-            border: 1px solid var(--color-dark-green);
-        }
-
-        .learn-more-btn:hover {
-            opacity: 0.9;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: var(--color-surface);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--color-dark-green);
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        /* Certifications Section */
-        .certifications {
-            padding: 80px 0;
-            background: var(--color-dark-green);
-            color: var(--color-off-white);
-        }
-
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .cert-card {
-            text-align: center;
-            padding: 30px;
-            background: rgba(255,255,255,0.08);
-            border-radius: 10px;
-        }
-
-        .cert-card img {
-            width: 120px;
-            height: 120px;
-            object-fit: contain;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            background: var(--color-surface);
-            padding: 15px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .cert-card h3 {
-            color: var(--color-golden-yellow);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .cert-card .learn-more-btn {
-            background: transparent;
-            color: var(--color-off-white);
-            border: 1px solid var(--color-off-white);
-        }
-
-        .cert-card .learn-more-btn:hover {
-            background: rgba(255,255,255,0.15);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-charcoal-gray);
-            color: var(--color-off-white);
-            padding: 50px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .footer-section h3 {
-            color: var(--color-golden-yellow);
-            margin-bottom: 20px;
-            font-family: 'Clarendon', 'Georgia', serif;
-        }
-
-        .footer-section p, .footer-section a {
-            color: #d6d6d6;
-            text-decoration: none;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .footer-section a:hover {
-            color: var(--color-golden-yellow);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #bdbdbd;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content .tagline {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
-    <link rel="preload" as="image" href="assets/images/A5OHG5MZOVFMJET4ZUWQ3NNG6Y.JPG">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Horizon Precision — Advanced Agricultural & Land Management Drone Services</title>
+    <meta name="description" content="UT students delivering precision agriculture & land maintenance with cutting-edge drones and AI across East Tennessee.">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <meta property="og:title" content="New Horizon Precision">
+    <meta property="og:description" content="Precision drone services for agriculture and land management.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newhorizonprecision.com/">
+    <meta property="og:image" content="https://newhorizonprecision.com/assets/img/og-hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preload" as="image" href="assets/img/a5ohg5mzovfmjet4zuwq3nng6y.jpg">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
             <div class="logo">
-                <a href="index.v2.html">New Horizon Precision</a>
+                <a href="index.html">New Horizon Precision</a>
             </div>
             <ul class="nav-links">
-                <li><a href="index.v2.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="kudzu.html">Kudzu Removal</a></li>
@@ -381,7 +56,7 @@
             
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="assets/images/266b358808fb56faac099c60491e8d90.jpg.medium.800x800.jpg" alt="Aerial Spraying">
+                    <img src="assets/img/266b358808fb56faac099c60491e8d90.jpg.medium.800x800.jpg" alt="Aerial Spraying" loading="lazy">
                     <div class="service-card-content">
                         <h3>Aerial Spraying</h3>
                         <p>Precision application of herbicides, pesticides, and fertilizers using advanced drone technology for maximum efficiency and minimal environmental impact.</p>
@@ -390,7 +65,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="assets/images/IMG_1Thefutureofdrones.jpg" alt="Cover Crop Application">
+                    <img src="assets/img/img-1thefutureofdrones.jpg" alt="Cover Crop Application" loading="lazy">
                     <div class="service-card-content">
                         <h3>Cover Crop Application & Seeding</h3>
                         <p>Efficient cover crop seeding and application services to improve soil health and optimize crop rotation schedules.</p>
@@ -399,7 +74,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="assets/images/images.jpeg" alt="Mapping and Surveying">
+                    <img src="assets/img/images.jpeg" alt="Mapping and Surveying" loading="lazy">
                     <div class="service-card-content">
                         <h3>Mapping & Surveying</h3>
                         <p>High-resolution aerial mapping and surveying using advanced sensors and AI technology for precise field analysis and planning.</p>
@@ -408,7 +83,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="assets/images/DSC03112-1.jpg.webp" alt="Row Crop & Pasture Seeding">
+                    <img src="assets/img/dsc03112-1.jpg.webp" alt="Row Crop & Pasture Seeding" loading="lazy">
                     <div class="service-card-content">
                         <h3>Row Crop & Pasture Seeding</h3>
                         <p>Precision seeding services for row crops and pastures, ensuring optimal seed placement and establishment for maximum agricultural productivity.</p>
@@ -417,7 +92,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="assets/images/what-is-drone-mapping.jpg.webp" alt="Precision Agriculture">
+                    <img src="assets/img/what-is-drone-mapping.jpg.webp" alt="Precision Agriculture" loading="lazy">
                     <div class="service-card-content">
                         <h3>Precision Agriculture Solutions</h3>
                         <p>AI-powered crop monitoring, health assessment, and variable rate application services for optimized yields.</p>
@@ -426,7 +101,7 @@
                 </div>
                 
                 <div class="service-card">
-                    <img src="assets/images/Drone-Inspection.webp" alt="Land Management">
+                    <img src="assets/img/drone-inspection.webp" alt="Land Management" loading="lazy">
                     <div class="service-card-content">
                         <h3>Land Management</h3>
                         <p>Comprehensive land maintenance and monitoring services including vegetation management and site preparation.</p>
@@ -449,7 +124,7 @@
                     <a href="about.html" class="learn-more-btn">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="assets/images/Spraying Drones - T30.jpg.webp" alt="Drone Operations">
+                    <img src="assets/img/spraying-drones-t30.jpg.webp" alt="Drone Operations" loading="lazy">
                 </div>
             </div>
         </div>
@@ -459,31 +134,31 @@
     <section id="certifications" class="certifications">
         <div class="container">
             <div class="section-title">
-                <h2 style="color: var(--color-off-white);">Licensed & Certified</h2>
+                <h2 style="color: white;">Licensed & Certified</h2>
                 <p>Fully compliant with all federal and state regulations for safe and legal drone operations</p>
             </div>
             
             <div class="cert-grid">
                 <div class="cert-card">
-                    <img src="assets/logos/faa-logo.png" alt="FAA Logo">
+                    <img src="assets/img/faa-logo.png" alt="FAA Logo" loading="lazy">
                     <h3>FAA Part 107 Certified</h3>
                     <p>Commercial drone operations certification with Remote Pilot Certificate for all operators. Compliance with flight altitude limits, visual line-of-sight requirements, and controlled airspace restrictions.</p>
                 </div>
                 
                 <div class="cert-card">
-                    <img src="assets/logos/faa-logo.png" alt="FAA Logo">
+                    <img src="assets/img/faa-logo.png" alt="FAA Logo" loading="lazy">
                     <h3>FAA Part 137 Certified</h3>
                     <p>Aerial dispensing of chemicals certification for agricultural spraying operations. Specialized training for pesticide and herbicide application via drone technology.</p>
                 </div>
                 
                 <div class="cert-card">
-                    <img src="assets/logos/tn-dept-agriculture-logo.png" alt="TN Department of Agriculture Logo">
+                    <img src="assets/img/tn-dept-agriculture-logo.png" alt="TN Department of Agriculture Logo" loading="lazy">
                     <h3>Tennessee Department of Agriculture Licensed</h3>
                     <p>Licensed pesticide applicators following TDA guidelines and EPA regulations. Expertise in integrated pest management and environmental safety protocols.</p>
                 </div>
                 
                 <div class="cert-card">
-                    <img src="assets/logos/drone-shield-logo.png" alt="Drone Insurance Logo">
+                    <img src="assets/img/drone-shield-logo.png" alt="Drone Insurance Logo" loading="lazy">
                     <h3>Comprehensive Insurance</h3>
                     <p>Full liability coverage including environmental protection insurance. Professional coverage for drift-related damages and regulatory compliance assurance.</p>
                 </div>
@@ -539,14 +214,7 @@
         </div>
     </footer>
 
-    <script>
-        // Keep header brand color on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            header.style.background = getComputedStyle(document.documentElement)
-                .getPropertyValue('--color-dark-green');
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
 

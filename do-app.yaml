@@ -1,0 +1,14 @@
+name: new-horizon-precision
+services:
+  - name: web
+    git:
+      repo_clone_url: https://github.com/NotClient01/Site-Final.git
+      branch: main
+    source_dir: /
+    http_port: 8080
+    routes:
+      - path: /
+    run_command: ""
+    environment_slug: static-site
+    build_command: ""
+    output_dir: /
