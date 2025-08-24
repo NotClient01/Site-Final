@@ -1,0 +1,35 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield shape -->
+  <path d="M 20 40 L 100 20 L 180 40 L 180 140 L 100 180 L 20 140 Z" fill="#3b82f6" stroke="black" stroke-width="3"/>
+  
+  <!-- Inner white border -->
+  <path d="M 25 45 L 100 25 L 175 45 L 175 135 L 100 175 L 25 135 Z" fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- Drone silhouette -->
+  <g transform="translate(100, 100)">
+    <!-- Main body -->
+    <rect x="-15" y="-10" width="30" height="20" fill="black" rx="3"/>
+    
+    <!-- Arms -->
+    <rect x="-25" y="-3" width="20" height="6" fill="black"/>
+    <rect x="5" y="-3" width="20" height="6" fill="black"/>
+    <rect x="-3" y="-25" width="6" height="20" fill="black"/>
+    <rect x="-3" y="5" width="6" height="20" fill="black"/>
+    
+    <!-- Propellers -->
+    <circle cx="-25" cy="0" r="8" fill="black"/>
+    <circle cx="25" cy="0" r="8" fill="black"/>
+    <circle cx="0" cy="-25" r="8" fill="black"/>
+    <circle cx="0" cy="25" r="8" fill="black"/>
+    
+    <!-- Propeller blades -->
+    <rect x="-29" y="-1" width="8" height="2" fill="black"/>
+    <rect x="-25" y="-5" width="2" height="8" fill="black"/>
+    <rect x="21" y="-1" width="8" height="2" fill="black"/>
+    <rect x="23" y="-5" width="2" height="8" fill="black"/>
+    <rect x="-1" y="-29" width="2" height="8" fill="black"/>
+    <rect x="-5" y="-25" width="8" height="2" fill="black"/>
+    <rect x="-1" y="21" width="2" height="8" fill="black"/>
+    <rect x="-5" y="23" width="8" height="2" fill="black"/>
+  </g>
+</svg> 
